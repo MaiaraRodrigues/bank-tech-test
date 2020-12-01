@@ -24,5 +24,33 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
+**User Stories**
 
+```
+
+As a user
+So I can use my money,
+I would like to have bank account.
+
+As a user
+So I can move money into my account,
+I want to be able to make a deposit.
+
+As a user
+So I can spend the money in my account, 
+I want to be able to make a withdrawal.
+
+As a user
+So I can know how much money I have, 
+I want to be able to see my balance.
+
+As a user
+So that I know my transaction history, 
+I want to be able to see when each transaction was made.
+
+As a user,
+So that I can understand my transaction history,
+I want to be able to see my transaction history in reverse chronological order.
+
+```
 
