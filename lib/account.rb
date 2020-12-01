@@ -1,4 +1,3 @@
-
 require './lib/transaction'
 require './lib/printer'
 
@@ -12,7 +11,6 @@ class Account
     @statement = []
     @transaction_class = transaction_class
     @printer_class = printer_class
-    
   end 
 
   def deposit(date, credit)
@@ -20,8 +18,9 @@ class Account
   end 
 
   def withdraw(date, debit)
+    raise 'Insufficient funds' if balance_is_zero?
     update_balance(date, debit: debit )
-    end 
+  end 
 
   def print_statement
     printer = @printer_class.new
@@ -39,6 +38,10 @@ class Account
   def create_transaction(date, credit, debit, balance)
     transaction = @transaction_class.new(date, credit, debit, balance)
     @statement << transaction
+  end
+
+  def balance_is_zero?
+    @balance.zero?
   end
 
 end 
