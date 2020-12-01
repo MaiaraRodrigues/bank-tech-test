@@ -1,10 +1,11 @@
 class Transaction
   
-  attr_reader :date, :amount, :balance
+  attr_reader :date, :credit, :debit, :balance
 
-  def initialize(date, amount, balance)
+  def initialize(date, credit, debit, balance)
     @date = date
-    @amount = amount
+    @debit = debit
+    @credit = credit
     @balance = balance
   end 
 

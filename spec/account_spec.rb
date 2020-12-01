@@ -4,7 +4,7 @@ describe 'Account' do
   subject(:account) { Account.new(transaction_class: fake_transaction_class) }
  
   let(:fake_transaction_class) { double(:fake_transaction_class, new: transaction) }
-  let(:transaction) { double(:transaction, date: "10/01/2012", amount: "1000", balance: "1000") }
+  let(:transaction) { double(:transaction, date: "10/01/2012", credit: "", debit: "1000", balance: "1000") }
 
 
   

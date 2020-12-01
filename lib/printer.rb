@@ -2,7 +2,7 @@ class Printer
 
   def print(statement)
     print_heading
-    statement.each { |transaction| puts transaction.date + " || " + transaction.amount.to_s + " || " + transaction.balance.to_s}
+    statement.reverse.each { |transaction| puts transaction.date + " || " + transaction.credit.to_s + ' || ' + transaction.debit.to_s + ' || ' + transaction.balance.to_s}
   end 
 
   private
