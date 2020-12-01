@@ -42,4 +42,9 @@ describe 'Account' do
     expect(fake_transaction_class).to have_received(:new).with('10-01-2012', 1000, 1000)
   end
 
+  it 'should be recorded in the bank statment' do
+    account.deposit('10/12/2012', 1000)
+    expect(account.statement).to include(transaction)
+  end
+
 end 
