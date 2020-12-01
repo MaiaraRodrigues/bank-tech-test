@@ -39,7 +39,7 @@ describe 'Account' do
       expect(fake_transaction_class).to have_received(:new).with('14/01/2012', nil, 500, 2500)
     end
   end
-  describe '#deposit'do
+  describe '#deposit' do
     it 'creates a transaction with credit value' do
       account.deposit('10/01/2012', 1000)
       expect(fake_transaction_class).to have_received(:new).with('10/01/2012', 1000, nil, 1000)
@@ -62,6 +62,6 @@ describe 'Account' do
     it 'raise an error if the user tries to withdraw' do
       allow(account).to receive(:balance) { 0 }
       expect { account.withdraw('15-01-2012', 500) }.to raise_error 'Insufficient funds'
-      end
     end
+  end
 end 

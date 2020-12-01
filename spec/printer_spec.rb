@@ -1,7 +1,7 @@
 require './lib/printer'
 
 describe Printer do
-  subject(:printer) {described_class.new}
+  subject(:printer) { described_class.new }
   let(:transaction1) { double(:transaction, date: "10/01/2012", credit: "", debit: "1000", balance: "1000") }
 
   it 'respondes to print' do
