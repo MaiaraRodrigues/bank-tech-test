@@ -37,14 +37,19 @@ describe 'Account' do
     end
   end
 
-  it 'should create a transaction' do
-    account.deposit('10-01-2012', 1000)
-    expect(fake_transaction_class).to have_received(:new).with('10-01-2012', 1000, 1000)
-  end
+    it 'should create a transaction' do
+      account.deposit('10-01-2012', 1000)
+      expect(fake_transaction_class).to have_received(:new).with('10-01-2012', 1000, 1000)
+    end
 
-  it 'should be recorded in the bank statment' do
-    account.deposit('10/12/2012', 1000)
-    expect(account.statement).to include(transaction)
-  end
+    it 'should be recorded in the bank statment' do
+      account.deposit('10/12/2012', 1000)
+      expect(account.statement).to include(transaction)
+    end
+
+    it 'prints statement' do
+      test = account.statement
+      expect(account.print_statement).to eq test
+    end
 
 end 

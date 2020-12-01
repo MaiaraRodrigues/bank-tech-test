@@ -21,6 +21,10 @@ class Account
     @balance -= amount
   end 
 
+  def print_statement
+    @statement
+  end 
+
   private
 
   def create_transaction(date, amount, balance)
