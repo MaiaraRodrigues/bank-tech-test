@@ -1,9 +1,10 @@
 class Account
 
-  attr_reader :balance
+  attr_reader :balance, :statment 
 
   def initialize
     @balance = 0
+    @statment = []
     
   end 
 

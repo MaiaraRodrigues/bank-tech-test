@@ -9,6 +9,10 @@ describe 'Account' do
 
       expect(account.balance).to eq 0
     end
+
+    it 'has an statment array' do
+      expect(account.statment).to eq []
+    end
   end
   
   describe '#deposit' do
