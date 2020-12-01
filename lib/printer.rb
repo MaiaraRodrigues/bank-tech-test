@@ -1,3 +1,4 @@
+
 class Printer
 
   def print(statement)
