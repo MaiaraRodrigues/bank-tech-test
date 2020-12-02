@@ -17,36 +17,37 @@ describe 'Account' do
       expect(account.statement).to eq []
     end
   end
-  
-  describe '#deposit' do
-    it 'allows to make a deposit' do
-      account.deposit('10/01/2012', 1000)
-      expect(account.balance).to eq 1000
-    end
-  end
 
   describe '#withdraw' do
-    it 'allows to make a withdraw' do
+    before do
       account.deposit('10/01/2012', 1000)
       account.deposit('13/01/2012', 2000)
-      account.withdraw('14/01/2012', 500)
+      account.withdraw('14/01/2012', 500) 
+    end
+
+    it 'allows to make a withdraw' do
       expect(account.balance).to eq 2500
     end
 
     it 'creates a transaction with a debit value' do
-      account.deposit('13/01/2012', 3000)
-      account.withdraw('14/01/2012', 500)
       expect(fake_transaction_class).to have_received(:new).with('14/01/2012', nil, 500, 2500)
     end
   end
+
   describe '#deposit' do
-    it 'creates a transaction with credit value' do
+    before do
       account.deposit('10/01/2012', 1000)
+    end
+
+    it 'allows to make a deposit' do
+      expect(account.balance).to eq 1000
+    end
+
+    it 'creates a transaction with credit value' do
       expect(fake_transaction_class).to have_received(:new).with('10/01/2012', 1000, nil, 1000)
     end
 
     it 'records a transaction in the bank statment' do
-      account.deposit('10/12/2012', 1000)
       expect(account.statement).to include(transaction)
     end
   end 
@@ -58,6 +59,7 @@ describe 'Account' do
       expect(fake_printer_class).to have_received(:new)
     end
   end 
+  
   describe 'when the bank account bank balance is 0' do
     it 'raise an error if the user tries to withdraw' do
       allow(account).to receive(:balance) { 0 }

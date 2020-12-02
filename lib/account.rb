@@ -19,7 +19,6 @@ class Account
 
   def withdraw(date, debit)
     raise 'Insufficient funds' if balance_is_zero?
-
     update_balance(date, debit: debit)
   end 
 

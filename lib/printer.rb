@@ -1,6 +1,6 @@
 class Printer
 
-  def print(statement)
+  def print_format(statement)
     print_heading
     statement.reverse.each { |transaction| puts transaction.date + " || " + transaction.credit.to_s + ' || ' + transaction.debit.to_s + ' || ' + transaction.balance.to_s }
   end
