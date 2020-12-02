@@ -61,6 +61,7 @@ I want to be able to see my transaction history in reverse chronological order.
 
 - I followed a TDD and OOP approach.
 - I followed the red, green refactored process, committing on green and then refactoring.
+- Following SRP principles I divided the responsibility between three classes.
 
 ## Test Coverage
 
