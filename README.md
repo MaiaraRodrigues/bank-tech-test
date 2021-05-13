@@ -3,7 +3,7 @@
 ### Overview
 A bank program that allows user to make transactions such as deposits, withdrawals and see and print the balance. 
 
-### Specifications (given)
+### Specifications: 
 * You are able to interact with the code via IRB.
 * Deposits, withdrawal.
 * Account statement (date, amount, balance) printing.
