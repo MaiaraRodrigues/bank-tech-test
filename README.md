@@ -1,7 +1,7 @@
 ## Bank-tech-test
 
 ### Overview
-Bank program that allows user to make transactions such as deposits, withdrawals and see and print the balance. 
+A bank program that allows user to make transactions such as deposits, withdrawals and see and print the balance. 
 
 ### Specifications (given)
 * You are able to interact with the code via IRB.
